@@ -8,6 +8,8 @@ public class Persona {
 	private String lenguaje;
 	private String raza;
 	
+	public Persona(){}
+	
 	public Persona(String nombre, String apellidos, Sexo genero, String lenguaje, String raza) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;

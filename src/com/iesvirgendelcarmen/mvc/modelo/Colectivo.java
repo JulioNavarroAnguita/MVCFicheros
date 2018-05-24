@@ -16,13 +16,16 @@ public class Colectivo {
 
 	private void cargarDatosFichero(String path) {
 		try (Scanner in = new Scanner(new File(path));){
-			Sexo genero = Sexo.HOMBRE;
+			
 			in.nextLine();
 			while(in.hasNextLine()) {
+				Sexo genero = Sexo.HOMBRE;
 				//System.out.println(in.nextLine());
 				String[] datos = in.nextLine().split(",");
-				if(datos[2].equalsIgnoreCase("FEMALE"))
+				if(datos[2].equals("Female"))
 					genero = Sexo.MUJER;
+				
+				
 				listaPersona.add(new Persona(datos[0], datos[1], genero, datos[3], datos[4]));
 			}
 			
@@ -46,6 +49,6 @@ public class Colectivo {
 	
 	public static void main(String[] args) {
 		Colectivo c = new Colectivo("Datos/data.csv");
-		System.out.println(c.getListaPersona());
+		//System.out.println(c.getListaPersona());
 	}
 }
